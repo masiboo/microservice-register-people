@@ -25,9 +25,9 @@ public class OfferService {
         return OfferMapper.INSTANCE.convertOfferEntityToDto(offerEntity);
     }
 
-    public List<OfferResponseDto> getOffer() {
+    public List<OfferResponseDto> getOffer() throws RuntimeException {
         Iterable<OfferEntity> allOffers = offerRepository.findAll();
-
-        return OfferMapper.INSTANCE.convertListOfferToListDto(allOffers);
+        throw new RuntimeException("dummy");
+       // return OfferMapper.INSTAN CE.convertListOfferToListDto(allOffers);
     }
 }
